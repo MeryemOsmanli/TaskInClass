@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    background-color: rgba(252, 164, 1, 0.534);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 70vh;
+    position: relative;
+    flex-direction: column;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    background-color: pink;    
+}
+.box2{
+    position:absolute;
+    /* bottom: 40px; */
+    right: 0px;
+   background-color: rgb(184, 107, 107);
+}
