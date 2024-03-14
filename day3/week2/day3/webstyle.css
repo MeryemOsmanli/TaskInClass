@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+img{
+    width: 100%;
+}
+/* navbar start */
+nav{
+    background-color: rgb(44, 62, 80);
+    width: 100%;
+}
+.navbar{
+color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 104px;
+    align-items: center;
+    
+}
+.container{
+    max-width: 1320px;
+    margin: auto;
+    padding: 0 15px;
+}
+.navbar a{
+    color: white;
+}
+.navbar ul{
+    display: flex;
+    gap: 40px;
+}
+.navbar ul li{
+    font-weight: bold;
+    color: white;
+}
+.navbar ul li a:hover{
+    color: #1abc9c;
+}
+.navbar h1{
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+.navbtn{
+    display: none;
+}
+/* navbar end */
+@media only screen and (max-width: 990px) {
+    .navbar ul{
+        display: none;
+    }
+    .navbtn{
+        display: flex;
+        border: none;
+        padding: 13px;
+        background-color: #1abc9c;
+        border-radius: 10px;
+        gap: 7px;
+        color: white;
+        
+    }
+  }
+
+  /* hero section start */
+  .hero{
+    background-color: #1abc9c;
+    min-height: 735px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+
+  }
+  .heroimg{
+    width: 240px;
+    height: 255px;
+    
+  }
+  .heroh1{
+    font-size: 3.5rem;
+    color: white;
+  }
+ .heroicon div{
+   border: 1px solid white;
+   height: 1px;
+   width: 112px;
+   margin-top: 20px;
+   
+
+ }
+ .heroicon{
+    display: flex;
+    color: white;
+    gap: 20px;
+ }
+ .heroicon i{
+ 
+    font-size: 48px;
+ }
+ .heroparag{
+    color: white;
+    font-size: 1.5rem;
+ }
+
+ @media only screen and (max-width: 850px) {
+    .heroh1{
+        font-size: 2.5rem;
+    }
+    .heroimg{
+        width: 180px;
+        height: 195px;
+        
+      }
+      .heroicon i{
+ 
+        font-size: 30px;
+     }
+     .heroicon div{
+        margin-top: 15px;
+     
+        width: 85px;
+      }
+      .heroicon{
+        gap: 15px;
+     }
+     .heroparag{
+        font-size: 1rem;
+     }
+  }
+  @media only screen and (max-width: 600px) {
+    .heroh1{
+        font-size: 1.5rem;
+    }
+    .heroimg{
+        width: 160px;
+        height: 175px;
+        
+      }
+      .heroicon i{
+ 
+        font-size: 23px;
+        
+     
+  }
+  .heroicon div{
+    margin-top: 10px;
+ 
+    width: 74px;
+  }
+  .heroicon{
+    gap: 10px;
+ }
+ .heroparag{
+    font-size: 0.9rem;
+ }
+}
+@media only screen and (max-width: 360px) {
+    .heroh1{
+        font-size: 1rem;
+    }
+    /* .heroimg{
+        width: 160px;
+        height: 175px;
+        
+      } */
+      .heroicon i{
+ 
+        font-size: 20px;
+        
+     
+  }
+  .heroicon div{
+    margin-top: 10px;
+ 
+    width: 64px;
+  }
+  /* .heroicon{
+    gap: 10px;
+ } */
+ .heroparag{
+    font-size: 0.7rem;
+    font-weight: bolder;
+ }
+}
+ /* hero section end*/
+ /* portfolio section start  */
+ .portfolio{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+ }
+ .portfolioh1{
+    margin: 2rem 0;
+    font-size: 2rem;
+    color: rgb(44, 62, 80);
+    letter-spacing: 10px;
+  }
+  .portfolioicon{
+    display: flex;
+    gap: 20px;
+  }
+  .portfolioicon div{
+    border: 1px solid rgb(44, 62, 80);
+    height: 1px;
+    width: 112px;
+    margin-top: 20px;
+  }
+  .portfolioicon  i{
+ 
+    font-size: 48px;
+ }
+
+ .card{
+    position: relative;
+ }
+ .card:hover .overlay{
+    display: flex;
+ }
+ .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #1abc9c;
+ }
