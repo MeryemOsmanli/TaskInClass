@@ -531,6 +531,9 @@ img {
     min-height: 395px;
     padding: 0 70px;
   }
+  .about_image {
+    padding-top: 10rem;
+  }
   .about_h1 {
     font-size: 13px;
   }
@@ -604,6 +607,9 @@ img {
   .about_h1 {
     font-size: 10px;
   }
+  /* .about_image img {
+    padding-top: 19rem;
+  } */
   .project {
     padding-top: 0rem;
   }

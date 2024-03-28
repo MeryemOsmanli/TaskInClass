@@ -1,0 +1,8 @@
+@import url("../layout/_navbar.scss");
+@import url("../layout/_footer.scss");
+.navbar_background {
+  width: 100%;
+  height: 200px;
+  background-color: green;
+  color: white;
+}/*# sourceMappingURL=style.css.map */
