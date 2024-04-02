@@ -13,4 +13,21 @@ parametr olaraq alinan ise callbackdir
 12--->  function name(params){} function decleration-nun yazilis formasina numune
 13--> let  multiply= function(params){}   function expression-nun yazilis formasina numune
 14--> let  multiply= (params)=>{}  arrow function-nun yazilis formasina numune
-15--> 
+15--> obyekt iki cur cagirilir obj.name ve obj["name"] ikincisi yeni versiyasidir ikincinin islenme yeri ise deyer vererek ola biler
+16--> arrow funktion nun ozune mexsus bir this i yoxdur
+17--> delete.obj.name obyektin silmek istediyimiz ozelliyini qeyd edirik
+18--> object.keys() obyektin key lerini qaytarir   
+19--> object.values() obyektin value lerini qaytarir
+20-->object.entries() umimilikde obyekti qaytarir
+21-->JS Datatype: string, number,bigint,boolean,undefined,null,object
+22-->object, arrays, function reference type dir
+23--> call() sade olaraq deyerleri saxlayir
+24--> apply() array olaraq deyerleri saxlayir
+25--> bind() funksiya saxlay;r
+26--> hasOwnProperty qeyd olunan deyerin object de olub olmadigini true ve ya false olaaraq qaytarir
+27--> js variables: let var const
+28--> js operators: + , -, /, %, *, **, ++, --, =, +=,-=,*=,/=,%=,**=,<=,>=,==,===,&&,||,!
+29-->
+30-->
+
+
