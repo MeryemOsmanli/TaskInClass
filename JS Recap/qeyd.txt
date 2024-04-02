@@ -1,0 +1,16 @@
+1--> ternary operator daxilinde break ve continue< return  islenmir
+2--> expression arrow teyin olunduqdan sonra cagirila biler
+3--> decleration amma ne vaxt istese cagirila biler buna hosting deyilir
+4--> structuredClone murekkeb arraylarin kopyalanmasi ucundur
+5--> spret(...) ise sade arraylari copy etmek ucundur
+6--> ?? nullish i ifaede eden isaredir? || or u ifade eden isaredir
+7--> ?? null ve ya undefineddirsa b deylsa a -----  null ?? b
+8--> || true dursa a deylse b -----  false || b
+9--> && birinci teref dogrudursa ikinci teref isleyir -----  true && b
+10--> falsy deyerler: null, undefined, sifir( 0 ), bos string(" ")
+11--> eger 1 function parametr olaraq basqa bir function qebul edirse alan goturen yeni ozuu high order function dursa
+parametr olaraq alinan ise callbackdir
+12--->  function name(params){} function decleration-nun yazilis formasina numune
+13--> let  multiply= function(params){}   function expression-nun yazilis formasina numune
+14--> let  multiply= (params)=>{}  arrow function-nun yazilis formasina numune
+15--> 
