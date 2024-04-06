@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .size {
+        padding: 5px 10px;
+        margin-top: 20px;
+        color: white;
+        border: none;
+        /* margin: 20px; */
+        background-color: black;
+        cursor: pointer;
+      }
+      .boxstyle {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1 id="demo">Salam</h1>
+    <ul>
+       <li class="list-item">1</li> 
+       <li class="list-item">2</li> 
+      <li class="list-item">3</li> 
+      <li>4</li>
+      <li>5</li>
+    </ul> -->
+
+    <!-- <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+      </div> -->
+
+    <script>
+      const newdiv = document.createElement("div");
+      newdiv.className = "card";
+      newdiv.setAttribute("style", "width: 18rem;");
+
+      document.body.appendChild(newdiv);
+      console.log(newdiv);
+
+      const newimg = document.createElement("img");
+      newimg.className = "card-img-top";
+      newimg.setAttribute("src", "...");
+      newimg.setAttribute("alt", "...");
+      newdiv.appendChild(newimg);
+
+      const seconddiv = document.createElement("div");
+      seconddiv.className = "card-body";
+      newdiv.appendChild(seconddiv);
+
+      const head5 = document.createElement("h5");
+      seconddiv.appendChild(head5);
+      head5.className = "card-title";
+      head5.textContent = "Card title";
+
+      const parag = document.createElement("p");
+      seconddiv.appendChild(parag);
+      parag.className = "card-text";
+      parag.textContent =
+        "Some quick example text to build on the card title and make up the bulk of the card's content.";
+
+      const hyper = document.createElement("a");
+      seconddiv.appendChild(hyper);
+      hyper.className = "btn btn-primary";
+      hyper.setAttribute("href", "#");
+      hyper.textContent = "Go somewhere";
+
+      const divbtn = document.createElement("div");
+      seconddiv.appendChild(divbtn);
+      divbtn.className = "btncontainer";
+      const btn = document.createElement("button");
+      seconddiv.appendChild(btn);
+      btn.textContent = "Click me";
+      btn.classList.add("size");
+
+      // let i = 1;
+
+      btn.addEventListener("click", function () {
+        // alert("salammmmm");
+        const box = document.createElement("div");
+        seconddiv.appendChild(box);
+        box.textContent = "salamlarr";
+        box.classList.add("boxstyle");
+        // i++;
+      });
+    </script>
+  </body>
+</html>

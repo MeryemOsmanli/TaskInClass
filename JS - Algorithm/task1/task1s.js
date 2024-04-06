@@ -4,8 +4,8 @@
 function replaceMaxEvenMinOdd(arr) {
   let maxEven = null;
   let minOdd = null;
-  let maxEvenindex = -1;
-  let minOddindex = -1;
+  let maxEvenindex = -4;
+  let minOddindex = -4;
 
   // max cut ededin ve onun indeksinin tapilmasi
 
@@ -29,7 +29,7 @@ function replaceMaxEvenMinOdd(arr) {
   }
 
   // max cut ve min tekin yerinin deyisdirilmesi
-  if (maxEvenindex !== -1 && minOddindex !== -1) {
+  if (maxEvenindex !== -4 && minOddindex !== -4) {
     let repalceNum = arr[maxEvenindex];
     arr[maxEvenindex] = arr[minOddindex];
     arr[minOddindex] = repalceNum;

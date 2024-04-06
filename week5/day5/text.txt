@@ -1,0 +1,2 @@
+sort ve reverse arrayin oz uzerinde deyisiklik edir map falan yeni array verir
+console.table

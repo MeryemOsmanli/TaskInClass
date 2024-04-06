@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* button {
+        background-color: blue;
+        color: white;
+        padding: 10px;
+      } */
+
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 1rem;
+        display: grid;
+        place-items: center;
+        font-family: system-ui;
+      }
+      h1 {
+        background: white;
+        padding: 1rem 2rem;
+        text-align: center;
+      }
+      span {
+        display: block;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: normal;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <input type="text" name="" id="myinp" />
+    <button onclick="myFunction()">Click me</button>
+    <p id="demo"></p> -->
+    <h1>
+      <input type="text" name="" id="myinp" class="myinp" />
+      <button id="btn" class="btn">Random Color</button>
+      <span id="color"></span>
+    </h1>
+
+    <script>
+      //   const changeback = () => {
+      //     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+      //     // const randomColor = (Math.random()*0xFFFFFF<<0).toString(16);
+      //     document.body.style.backgroundColor = "#" + randomColor;
+      //     // color.innerHTML = "#" + randomColor;
+      //     input.value = "#" + randomColor;
+      //   };
+
+      //   btn.addEventListener("click", changeback);
+      //   changeback();
+      const body = document.body;
+      const input = document.querySelector(".myinp");
+      const btn = document.querySelector(".btn");
+      const changeback = () => {
+        const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        // const randomColor = (Math.random()*0xFFFFFF<<0).toString(16);
+        document.body.style.backgroundColor = "#" + randomColor;
+        // color.innerHTML = "#" + randomColor;
+        input.value = "#" + randomColor;
+      };
+      btn.addEventListener("click", changeback);
+      changeback();
+    </script>
+  </body>
+</html>
