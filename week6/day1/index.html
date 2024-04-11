@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="myform" action="">
+      <input type="text" name="" id="inpid" />
+      <button id="addBtn" onclick="">add</button>
+      <button id="removebtn">remove</button>
+    </form>
+    <ol></ol>
+    <script>
+      const myForm = document.getElementById("myform");
+      const addBtn = document.getElementById("addBtn");
+      const removebtn = document.getElementById("removebtn");
+      const inp = document.getElementById("inpid");
+      const ol = document.querySelector("ol");
+
+      //   let todos = [];
+      const local = localStorage.getItem("deyer");
+      let todos = local ? JSON.parse(local) : [];
+      console.log(todos);
+      todos.forEach((element) => creatItem(element, ol));
+
+      myForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        creatItem(inp.value, ol);
+        todos.push(inp.value);
+        localStorage.setItem("deyer", JSON.stringify(todos));
+        inp.value = "";
+      });
+
+      function creatItem(val, parent) {
+        const li = document.createElement("li");
+        li.textContent = val;
+        ol.appendChild(li);
+        removebtn.onclick = () => {
+          todos = todos.filter((x) => x !== val);
+          localStorage.setItem("deyer", JSON.stringify(todos));
+          li.remove();
+        };
+      }
+    </script>
+  </body>
+</html>

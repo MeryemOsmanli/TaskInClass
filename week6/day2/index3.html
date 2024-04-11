@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="myform" action="">
+      <input type="text" name="" id="inp1" />
+      <input type="text" name="" id="inp2" />
+    </form>
+    <ol></ol>
+
+    <script>
+      const myForm = document.getElementById("myform");
+      const inp1 = document.getElementById("inp1");
+      const inp2 = document.getElementById("inp2");
+      const ol = document.querySelector("ol");
+
+      const local = localStorage.getItem("deyer");
+      let todos = local ? JSON.parse(local) : [];
+      console.log(todos);
+      todos.forEach((element) => creatItem(element, ol));
+
+      myForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        creatItem(inp1.value, ol);
+        todos.push(inp1.value);
+        localStorage.setItem("deyer", JSON.stringify(todos));
+        inp1.value = "";
+      });
+      function creatItem(val, parent) {
+        const li = document.createElement("li");
+        li.textContent = val;
+        ol.appendChild(li);
+      }
+    </script>
+  </body>
+</html>

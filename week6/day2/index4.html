@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action=" " id="myform">
+      <input type="text" name="" id="" class="inp1" />
+      <input type="text" name="" id="" class="inp2" />
+    </form>
+    <script>
+      const inp1 = document.querySelector(".inp1");
+      const inp2 = document.querySelector(".inp2");
+      let data = JSON.parse(localStorage.getItem("value"));
+      inp1.value = data.name;
+      inp2.value = data.lastname;
+
+      inp1.addEventListener("keyup", function () {
+        localStorage.setItem(
+          "value",
+          JSON.stringify({ name: inp1.value, lastname: inp2.value })
+        );
+      });
+      inp2.addEventListener("keyup", function () {
+        localStorage.setItem(
+          "value",
+          JSON.stringify({ name: inp1.value, lastname: inp2.value })
+        );
+      });
+    </script>
+  </body>
+</html>

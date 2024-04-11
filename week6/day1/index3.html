@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <input type="text" name="" id="myinp" />
+      <button id="addbtn">add</button>
+      <button id="removebtn">remove</button>
+      <button id="editbtn">edit</button>
+    </div>
+    <script>
+      const addbtn = document.getElementById("addbtn");
+      const removebtn = document.getElementById("removebtn");
+      const editbtn = document.getElementById("editbtn");
+      const myinp = document.getElementById("myinp");
+      const container = document.getElementById("container");
+
+      const local = localStorage.getItem("value")
+        ? JSON.parse(localStorage.getItem("value"))
+        : [];
+      local.forEach((element) => creatItem(element, h3));
+
+      addbtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        creatItem(myinp.value, container);
+        local.push(myinp.value);
+        localStorage.setItem("value", JSON.stringify(local));
+        myinp.value = "";
+      });
+      function creatItem(val, parent) {
+        const h3 = document.createElement("h3");
+        h3.textContent = val;
+        container.appendChild(h3);
+        removebtn.onclick = () => {
+          local = local.filter((x) => x !== val);
+          localStorage.setItem("value", JSON.stringify(local));
+          h3.remove();
+        };
+      }
+    </script>
+  </body>
+</html>

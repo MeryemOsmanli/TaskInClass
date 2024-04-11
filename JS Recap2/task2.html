@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task2</title>
+  </head>
+  <body>
+    <input type="text" id="myinp" />
+    <button onclick="addText()">Add Text</button>
+    <div id="textDiv"></div>
+
+    <script>
+      //  locola storage ve div in icine text in elave eden function
+      let myinp = document.getElementById("myinp");
+      function addText() {
+        let inputText = myinp.value.trim();
+
+        if (inputText === "") {
+          return;
+        }
+
+        let textDiv = JSON.parse(localStorage.getItem("textDiv")) || [];
+
+        textDiv.push(inputText);
+
+        localStorage.setItem("textDiv", JSON.stringify(textDiv));
+
+        showText();
+
+        myinp.value = "";
+      }
+
+      //   metn yigimini ekranda gosteren function
+      function showText() {
+        let textDiv = JSON.parse(localStorage.getItem("textDiv")) || [];
+
+        let allTextContainer = document.getElementById("textDiv");
+
+        allTextContainer.innerHTML = "";
+
+        textDiv.forEach(function (text) {
+          let textParag = document.createElement("p");
+          textParag.textContent = text;
+          allTextContainer.appendChild(textParag);
+        });
+      }
+
+      showText();
+    </script>
+  </body>
+</html>

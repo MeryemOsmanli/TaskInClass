@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Creator</title>
+    <style>
+      .card {
+        min-height: 50px;
+        max-width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        overflow: auto;
+      }
+      h2 {
+        text-align: center;
+        margin-top: 0;
+        background-color: palevioletred;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="titleInp" placeholder="Enter title" />
+    <input type="text" id="textInp" placeholder="Enter text" />
+    <button onclick="addCard()">Add Card</button>
+
+    <div id="cardContainer"></div>
+
+    <script>
+      //   card elave eden function
+      function addCard() {
+        let titleInp = document.getElementById("titleInp");
+        let textInp = document.getElementById("textInp");
+
+        let title = titleInp.value.trim();
+        let text = textInp.value.trim();
+
+        // inputlarin bos olub olmadigini yoxlayiriq eger bosdurlarsa doldurmali olduqlarina dair alert cixardiriq
+        if (title === "" || text === "") {
+          alert("zehmet olmasa her iki yeri doldurun!!");
+          return;
+        }
+
+        // card divi yaradiriq
+        let card = document.createElement("div");
+        card.classList.add("card");
+
+        // cardin icine title ve text hisselerini yaradiriq
+        let titlePart = document.createElement("h2");
+        titlePart.textContent = title;
+        let textPart = document.createElement("p");
+        textPart.textContent = text;
+
+        card.appendChild(titlePart);
+        card.appendChild(textPart);
+
+        let cardContainer = document.getElementById("cardContainer");
+        cardContainer.appendChild(card);
+
+        saveCard(title, text);
+
+        //    her yazdiqdan sonra inputlarin icinin temizlenmesi
+        titleInp.value = "";
+        textInp.value = "";
+      }
+
+      //   localstorage de cardlari saxlayan function
+      function saveCard(title, text) {
+        let cards = JSON.parse(localStorage.getItem("cards")) || [];
+
+        cards.push({ title: title, text: text });
+
+        localStorage.setItem("cards", JSON.stringify(cards));
+      }
+
+      // localda olan cardlari ekrana getirme function
+      function loadCards() {
+        let cards = JSON.parse(localStorage.getItem("cards")) || [];
+
+        cards.forEach(function (cardData) {
+          let card = document.createElement("div");
+          card.classList.add("card");
+
+          let titlePart = document.createElement("h2");
+          titlePart.textContent = cardData.title;
+          let textPart = document.createElement("p");
+          textPart.textContent = cardData.text;
+
+          card.appendChild(titlePart);
+          card.appendChild(textPart);
+
+          let cardContainer = document.getElementById("cardContainer");
+          cardContainer.appendChild(card);
+        });
+      }
+
+      loadCards();
+    </script>
+  </body>
+</html>

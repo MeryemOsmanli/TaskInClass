@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="decreasebtn">-1</button>
+    <p class="parag"></p>
+    <button class="increasebtn">+1</button>
+  </body>
+  <script>
+    const decreasebtn = document.querySelector(".decreasebtn");
+    const increasebtn = document.querySelector(".increasebtn");
+    const parag = document.querySelector(".parag");
+
+    let count = localStorage.getItem("value")
+      ? JSON.parse(localStorage.getItem("value"))
+      : 0;
+    parag.textContent = count;
+
+    increasebtn.addEventListener("click", function () {
+      count++;
+      parag.textContent = count;
+      console.log(count);
+      localStorage.setItem("value", count);
+    });
+
+    decreasebtn.addEventListener("click", function () {
+      count--;
+      parag.textContent = count;
+      localStorage.setItem("value", count);
+    });
+  </script>
+</html>

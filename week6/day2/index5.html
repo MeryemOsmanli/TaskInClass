@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="btn1">aze</button>
+    <button class="btn2">ru</button>
+    <button class="btn3">eng</button>
+    <p class="parag"></p>
+
+    <script>
+      const btn1 = document.querySelector(".btn1");
+      const btn2 = document.querySelector(".btn2");
+      const parag = document.querySelector(".parag");
+      const btn3 = document.querySelector(".btn3");
+
+      let data = localStorage.getItem("value")
+        ? JSON.parse(localStorage.getItem("value"))
+        : [];
+      parag.textContent = data.lang;
+      //   x = btn1.value;
+      //   y = btn2.value;
+      //   z = btn3.value;
+
+      btn1.addEventListener("click", function () {
+        parag.textContent = btn1.textContent;
+        localStorage.setItem(
+          "value",
+          JSON.stringify({
+            lang: btn1.textContent,
+          })
+        );
+      });
+      btn2.addEventListener("click", function () {
+        parag.textContent = btn2.textContent;
+        localStorage.setItem(
+          "value",
+          JSON.stringify({
+            lang: btn2.textContent,
+          })
+        );
+      });
+      btn3.addEventListener("click", function () {
+        parag.textContent = btn3.textContent;
+        localStorage.setItem(
+          "value",
+          JSON.stringify({
+            lang: btn3.textContent,
+          })
+        );
+      });
+    </script>
+  </body>
+</html>

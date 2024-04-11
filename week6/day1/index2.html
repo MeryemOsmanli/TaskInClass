@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .disabled {
+        background-color: red;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="decreasebtn">-1</button>
+    <p class="parag"></p>
+    <button class="increasebtn">+1</button>
+
+    <script>
+      const decreasebtn = document.querySelector(".decreasebtn");
+      const increasebtn = document.querySelector(".increasebtn");
+      const parag = document.querySelector(".parag");
+
+      let count = JSON.parse(localStorage.getItem("value")) || 0;
+      parag.textContent = count;
+
+      increasebtn.addEventListener("click", function () {
+        count++;
+        parag.textContent = count;
+        localStorage.setItem("value", count);
+        if (!count == 0) {
+          decreasebtn.classList.remove("disabled");
+        }
+      });
+
+      decreasebtn.addEventListener("click", function () {
+        count--;
+        parag.textContent = count;
+        localStorage.setItem("value", count);
+        if (count == 0) {
+          console.log("salam");
+          decreasebtn.classList.add("disabled");
+        }
+      });
+
+      //   function increaseCount() {
+      //     if (localStorage.x) {
+      //       localStorage.x = Number(localStorage.x) + 1;
+      //     } else {
+      //       localStorage.x = 1;
+      //     }
+      //     document.getElementById("parag").innerHTML = localStorage.x;
+      //   }
+      //   increaseCount();
+      //   function decreaseCount() {
+      //     if (localStorage.x) {
+      //       localStorage.x = Number(localStorage.x) - 1;
+      //     } else {
+      //       localStorage.x = 1;
+      //     }
+      //     document.getElementById("parag").innerHTML = localStorage.x;
+      //   }
+      //   decreaseCount();
+    </script>
+  </body>
+</html>

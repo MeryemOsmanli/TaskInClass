@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      [data-theme="light"] {
+        --main-color: #dfdad8;
+        --sec-color: #202527;
+        --third-color: #6e6e65;
+        --one--color: #acf2be4d;
+        --two--color: #fdb8c052;
+      }
+
+      [data-theme="dark"] {
+        --main-color: #6e6e65;
+        --sec-color: #f5f5f5;
+        --third-color: #202527;
+        --one--color: #acf2bd;
+        --two--color: #fdb8c0;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="darkmode" type="button" onclick="toggleDark()">
+      <span id="night" class="material-icons">mode_night </span>
+      <span id="light" class="material-icons">light_mode</span>
+    </button>
+
+    <script>
+      function toggleDark() {
+        const container = document.body;
+        const dataTheme = container.getAttribute("data-theme");
+        let theme = localStorage.getItem("data-theme");
+
+        if (dataTheme === "light") {
+          container.setAttribute("data-theme", "dark");
+          document.getElementById("night").style.display = "block";
+          document.getElementById("light").style.display = "none";
+          localStorage.toggled("data-theme", "dark");
+        } else {
+          container.setAttribute("data-theme", "light");
+          document.getElementById("night").style.display = "none";
+          document.getElementById("light").style.display = "block";
+          localStorage.setItem("data-theme", "light");
+        }
+      }
+    </script>
+  </body>
+</html>
